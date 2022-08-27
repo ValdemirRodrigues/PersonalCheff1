@@ -7,11 +7,28 @@
 <img src="exemplo.webp" alt="exemplo imagem">
 > <Descrição do projeto>
 Uma aplicação web de receitas chamada PersonalCheff1 desenvolvida durante o curso de Python no Senac Americana. A aplicação listará receitas e clicando em cada nome de receita você pode ver a receita completa.
+
 ### Lista de tarefas
 Segue a lista de tarefas a serem desenvolvidas no projeto:
 - [X] Pré-requisitos
     - [X] Instalar o Python
     - [X] Instalar Visual Studio Code
+- [] Criar e ativar o ambiente virtual
+- [] Criar o projeto PersonalCheff1
+- [] Subir o ervidor e testar o projeto
+- [] Criar e ativar o ambiente virtual 
+- [] Subir o servidor e testa o projeto 
+- [] Alterar o idioma do projeto para `pt-br` 
+- [] Alterar o timezone do prpjeto para `America/Sao_Paulo`
+- [] Criar o app receitas
+- [] Registrar  o app receitas
+- [] Configurar a rota inicial (index)
+- [] Criar a view  para a rota inicial
+- [] Registrar a rota inicial
+- [] Criar arquivo index
+
+
+    
 
 ## 📝 Licença
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.

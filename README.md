@@ -31,7 +31,14 @@ django-admin help
 django-admin.py help
 django-admin.py startproject PersonalCheffProj
 ```
-- [] Subir o servidor e testar o projeto
+- [X] Subir o servidor e testar o projeto
+```
+entrar na pasta do projeto
+cd PersonalCheffProj
+
+executar o projeto no servidor 
+python manage.py runserver
+```
 - [] Criar e ativar o ambiente virtual 
 - [] Subir o servidor e testa o projeto 
 - [] Alterar o idioma do projeto para `pt-br` 

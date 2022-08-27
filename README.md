@@ -14,6 +14,12 @@ Segue a lista de tarefas a serem desenvolvidas no projeto:
     - [X] Instalar o Python
     - [X] Instalar Visual Studio Code
 - [] Criar e ativar o ambiente virtual
+```
+python -m venv .\venv\
+Scripts\activate
+```
+
+- [] Instalar de Django
 - [] Criar o projeto PersonalCheff1
 - [] Subir o ervidor e testar o projeto
 - [] Criar e ativar o ambiente virtual 

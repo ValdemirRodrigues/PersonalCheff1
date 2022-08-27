@@ -13,18 +13,18 @@ Segue a lista de tarefas a serem desenvolvidas no projeto:
 - [X] Pré-requisitos
     - [X] Instalar o Python
     - [X] Instalar Visual Studio Code
-- [] Criar e ativar o ambiente virtual
+- [X] Criar e ativar o ambiente virtual
 ```
 criação e ativação
 python -m venv .\venv\
 Scripts\activate
 ```
 
-- [] Instalar de Django
+- [X] Instalar de Django
 ```
 python -m pip install django==3.2
 ```
-- [] Criar o projeto PersonalCheff1
+- [X] Criar o projeto PersonalCheff1
 ```
 Busca por comandos
 django-admin help
@@ -45,7 +45,8 @@ python manage.py runserver
 
 Abrir o arquivo `settings.py` e na linha 106 trocar `en-us` para `pt-br` 
 
-- [] Alterar o timezone do prpjeto para `America/Sao_Paulo`
+- [X] Alterar o timezone do prpjeto para `America/Sao_Paulo`
+Abrir o arquivo `settings.py` e na linha 108 trocar `UTC` para `America/Sao_Paulo`
 - [] Criar o app receitas
 - [] Registrar  o app receitas
 - [] Configurar a rota inicial (index)

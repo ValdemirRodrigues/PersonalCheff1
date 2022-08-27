@@ -39,9 +39,12 @@ cd PersonalCheffProj
 executar o projeto no servidor 
 python manage.py runserver
 ```
-- [] Criar e ativar o ambiente virtual 
-- [] Subir o servidor e testa o projeto 
-- [] Alterar o idioma do projeto para `pt-br` 
+- [X] Criar e ativar o ambiente virtual 
+- [X] Subir o servidor e testa o projeto 
+- [X] Alterar o idioma do projeto para `pt-br` 
+
+Abrir o arquivo `settings.py` e na linha 106 trocar `en-us` para `pt-br` 
+
 - [] Alterar o timezone do prpjeto para `America/Sao_Paulo`
 - [] Criar o app receitas
 - [] Registrar  o app receitas

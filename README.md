@@ -4,7 +4,7 @@
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-<img src="exemplo.webp" alt="exemplo imagem">
+<img src="exemplo.jfif" alt="exemplo imagem">
 > <Descrição do projeto>
 Uma aplicação web de receitas chamada PersonalCheff1 desenvolvida durante o curso de Python no Senac Americana. A aplicação listará receitas e clicando em cada nome de receita você pode ver a receita completa.
 
@@ -15,13 +15,23 @@ Segue a lista de tarefas a serem desenvolvidas no projeto:
     - [X] Instalar Visual Studio Code
 - [] Criar e ativar o ambiente virtual
 ```
+criação e ativação
 python -m venv .\venv\
 Scripts\activate
 ```
 
 - [] Instalar de Django
+```
+python -m pip install django==3.2
+```
 - [] Criar o projeto PersonalCheff1
-- [] Subir o ervidor e testar o projeto
+```
+Busca por comandos
+django-admin help
+django-admin.py help
+django-admin.py startproject PersonalCheffProj
+```
+- [] Subir o servidor e testar o projeto
 - [] Criar e ativar o ambiente virtual 
 - [] Subir o servidor e testa o projeto 
 - [] Alterar o idioma do projeto para `pt-br` 

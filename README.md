@@ -51,11 +51,43 @@ Abrir o arquivo `settings.py` e na linha 108 trocar `UTC` para `America/Sao_Paul
 ```
 python manage.py startapp receitas  
 ```
-- [] Registrar  o app receitas
-- [] Configurar a rota inicial (index)
-- [] Criar a view  para a rota inicial
+- [X] Registrar  o app receitas
+```
+    no arquivo settings.py adicionar o app receitas na lista de apps 
+INSTALLED_APPS[
+    ...
+    'receitas',
+]
+- [X] Configurar a rota inicial (index)
+```
+Dentro da pasta receita(app) criar o arquivo urls.py
+no arquivo urls.py
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.index, name='index')
+    ]
+```
+- [X] Criar a view  para a rota inicial
+```
+Dentro da pasta receitas(app) abrir o arquivo views.py
+    from django.shortcuts import render
+    from django.http import HttpResponse
+
+    def index(request):
+        return HttpResponse("<h1>Seja bem vindo</h1>")
+```
 - [] Registrar a rota inicial
 - [] Criar arquivo index
+-Dentro da pasta receitas(app), criar a pasta 'templetes'
+- Dentro da pasta Templetes criar index.html
+- No arquivo viwes.py que esta dentro da pasta do app faça a seguinte alteração de codigo:
+```
+    python
+    
+
+```
 
 
     

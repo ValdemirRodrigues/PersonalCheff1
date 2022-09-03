@@ -47,7 +47,10 @@ Abrir o arquivo `settings.py` e na linha 106 trocar `en-us` para `pt-br`
 
 - [X] Alterar o timezone do prpjeto para `America/Sao_Paulo`
 Abrir o arquivo `settings.py` e na linha 108 trocar `UTC` para `America/Sao_Paulo`
-- [] Criar o app receitas
+- [X] Criar o app receitas
+```
+python manage.py startapp receitas  
+```
 - [] Registrar  o app receitas
 - [] Configurar a rota inicial (index)
 - [] Criar a view  para a rota inicial

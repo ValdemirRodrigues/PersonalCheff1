@@ -107,7 +107,8 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
         - `STATIC_ROOT`: configuração da pasta de saída (destino) dos arquivos estaticos
         _`STATIC....DIR`
 
-        - Utilizar o comando {% load static %} para utilar a 
+        - na primeira linha do arquivo `index.html` insira `{% load static %}`. Esse comando deve ser usado em todos os qarquivos em que você for utilizar arquivos estaticos.
+        - Insira uma img utilizando o comando <img src="{% static 'logo.php' %}>. Sempre que for utilizar um arquivo estatico voce deve utilizar {% static 'nome-do-arquivo'} 
 
 - [] Utilizando links
  Criando o base.html

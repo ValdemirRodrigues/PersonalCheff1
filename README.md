@@ -88,6 +88,39 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
     
 
 ```
+- []Integrar arquivos estáticos (CSS, JS, IMG)
+    - Dentro da Pasta do Projeto (PersonalCheffProj), criar a pasta 'static'
+    - Dentro da Pasta Static, colocar as Imagens, os arquivos css e os arquivos js que for utilizar
+    - No arquivo  ´settings.py´:
+        -realize a importação da biblioteca 'os' atravez do comodo `import os`
+        - na linha  ~58 adicione o caminho dos templetes da seguinte forma:
+        ```python
+          'DIRS': [os.path.join(BASE_DIR, 'receitas/tamplates')],
+        ``` 
+        - no final do arquivo, após a linha 'STATIC_URL' insira o seguinte código:
+        STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+        STATICFILES_DIRS =[
+            os.path.join(BASE_DIR, 'PersonalCheffProj/static')
+        ]
+        ```
+        - `STATIC_URL`: é a confirmação da rota através do qual os arquivos estaticos seram servidos
+        - `STATIC_ROOT`: configuração da pasta de saída (destino) dos arquivos estaticos
+        _`STATIC....DIR`
+
+        - Utilizar o comando {% load static %} para utilar a 
+
+- [] Utilizando links
+ Criando o base.html
+ Separando em partials
+ Renderizando dados dinamicamente
+ Criando um dicionario com as receitas
+ Criando o banco de dados(MySQL/MariaDB)
+ Instalando o conector do bando de dados MySQL
+ Criando o modelo da receita
+ Criando a migration (mapeamento)
+ Realizando a migration
+ Registrando um modelo no admin
+ Criando um usuário para o ambiente administrativo
 
 
     

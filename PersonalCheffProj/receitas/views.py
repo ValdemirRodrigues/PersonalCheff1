@@ -6,3 +6,5 @@ def sucodelaranja(request):
     return render(request, 'sucodelaranja.html')
 def sucodelimao(request):
     return render(request, 'sucodelimao.html')
+def sucodemorango(request):
+    return render(request, 'sucodemorango.html')

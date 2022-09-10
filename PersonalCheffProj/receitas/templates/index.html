@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +8,10 @@
     <title>PersonalCheff</title>
 </head>
 <body>
-    <h1>PersonalCheff</h1>
+    <h1>
+        <img src={% static 'logo.webp' %}>
+        PersonalCheff
+    </h1>
     <h2>Seu site de receitas</h2>
     <table border="1">
         <tr>
@@ -17,13 +21,19 @@
         </tr>
         <tr>
             <td>Suco de laranja</td>
-            <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
+            <td><a href=https://www.youtube.com/watch?v=Nn9140bDPnc>Veja o Vídeo</a></td>
             <td><a href="sucodelaranja">Ver receita completa</a></td>
+            <td><img src="C:/Users/valdemir.crodrigues/Documents/GitHub/PersonalCheff1/laranja.webp" alt="Minha Figura"></td>
         </tr>
         <tr>
             <td>Suco de Lmão</td>
-            <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
+            <td><a href="https://www.youtube.com/watch?v=9QUhRXEBY8o">Veja o Vídeo</a></a></td>
             <td><a href="sucodelimao">Ver receita completa</a></td>
+        </tr>
+        <tr>
+            <td>Suco de Morango</td>
+            <td><a href="https://www.youtube.com/watch?v=1rd79vrMZq0">Veja o Vídeo</a></a></td>
+            <td><a href="sucodemorango">Ver receita completa</a></td>
         </tr>
     </table>
 </body>

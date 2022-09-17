@@ -139,16 +139,21 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
 
 </body>  
 </html>
- Separando em partials
- Renderizando dados dinamicamente
- Criando um dicionario com as receitas
- Criando o banco de dados(MySQL/MariaDB)
- Instalando o conector do bando de dados MySQL
- Criando o modelo da receita
- Criando a migration (mapeamento)
- Realizando a migration
- Registrando um modelo no admin
- Criando um usuário para o ambiente administrativo
+ [X]Separando em partials
+ - criar uma pasta chamada `partials` dentro da parta `templetes`
+ - dentro da pasta `partials` crie os arquivos que serão as ** partes glogais** utilizadas no seu projeto como `header.html`, footer.html `, etc. No nosso exemplo criamos as partials `header.html `e `fooder.html`
+ -inira em cada um dos arquivos seus codigos correspondentes. Exemplo: noa arquivo `header.html` eu insiro todo o controle quero que  seja apresentado no cabeçalho da minha aplicação. não se esqueça do comando `{% load static} 
+ - para incluir as partials no arquivos de destinos utilize o comando `include`da seguite maneira:
+ {% include 'partials/header.html'%} 
+ [ ]Renderizando dados dinamicamente
+ [ ]Criando um dicionario com as receitas
+ [ ]Criando o banco de dados(MySQL/MariaDB)
+ [ ]Instalando o conector do bando de dados MySQL
+ [ ]Criando o modelo da receita
+ [ ]Criando a migration (mapeamento)
+ [ ]Realizando a migration
+ [ ]Registrando um modelo no admin
+ [ ]Criando um usuário para o ambiente administrativo
 
 
     

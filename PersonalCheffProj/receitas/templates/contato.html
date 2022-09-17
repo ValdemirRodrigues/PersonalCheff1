@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+{% include 'partials/header.html' %}
+    <h1>PersonalCheff</h1>
+    <h2>Entre em contato</h2>
+    <form>
+        Nome: <input><br>
+        Telefone: <input> type="tel"><br>
+        Mensagem:<br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>>
+    </form> 
+    <a href="{% url 'index' %}">Pagina inicial</a>
+{% include 'partials/footer.html' %}
+{% endblock %}

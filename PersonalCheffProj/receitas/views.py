@@ -8,3 +8,5 @@ def sucodelimao(request):
     return render(request, 'sucodelimao.html')
 def sucodemorango(request):
     return render(request, 'sucodemorango.html')
+def contato(request):
+    return render(request, 'contato.html')

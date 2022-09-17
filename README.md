@@ -155,9 +155,20 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
  [ ]Registrando um modelo no admin
  [ ]Criando um usuário para o ambiente administrativo
 
+´´´
+    Projeto padrão do GUTO
+static/
+    style.css
+    app.js
+    img/
 
-    
-
+templetes/
+    index.html
+    partials/
+        heaader.html
+        menu.html
+        footer.html
+´´´        
 ## 📝 Licença
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
 [⬆ Voltar ao topo](#nome-do-projeto)<br>

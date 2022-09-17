@@ -110,8 +110,35 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
         - na primeira linha do arquivo `index.html` insira `{% load static %}`. Esse comando deve ser usado em todos os qarquivos em que você for utilizar arquivos estaticos.
         - Insira uma img utilizando o comando <img src="{% static 'logo.php' %}>. Sempre que for utilizar um arquivo estatico voce deve utilizar {% static 'nome-do-arquivo'} 
 
-- [] Utilizando links
- Criando o base.html
+- [X] Utilizando links
+    -Para criar um link na pagina html utilize url 
+    <a hraf= "{% url 'index' %}">Pagina inicial</a>
+ [X]Criando o base.html
+    - na pasta `templetes` crie o arquivo base.html , Esse arquivocontem todo o codigo de estrutura comum à todos as paginas. nesse arquivo deve ficar tudo que tiver do `body` e tudo que tiver depois do `/body`.
+    - nesse arquivo de conter o `{% load static %}`
+    - nesse arquivo , no local aonde será  carregado o conteudo das outras paginas, deve existir os delimitadores `{ block contente%}` e `{% endblock%}
+    - o codigo da `base.html` sera algo parecido com:
+    ```python
+    {% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PersonalCheff</title>
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+    <link rel="shortcut icon" href="{% static 'logo.webp' %}"  >
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+
+</body>  
+</html>
  Separando em partials
  Renderizando dados dinamicamente
  Criando um dicionario com as receitas

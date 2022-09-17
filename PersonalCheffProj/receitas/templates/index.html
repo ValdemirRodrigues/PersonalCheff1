@@ -1,15 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PersonalCheff</title>
-    <link rel="stylesheet" href="{% static 'estilo.css' %}">
-    <link rel="shortcut icon" href="{% static 'logo.webp' %}"  >
-</head>
-<body>
+{% block content%}
+
     <h1>
         <img src={% static 'logo.webp' %} class="imagem-logo">
         PersonalCheff
@@ -42,4 +34,5 @@
         </tr>
     </table>
 </body>
-</html>
+
+{% endblock %}

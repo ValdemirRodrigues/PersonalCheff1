@@ -167,7 +167,10 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
     - Acesse o link PHPMyAdmin
     - Dentro PHPMyAdmin, click no botão `novo` para criar um banco de dados, insira o nome `personacheff_br`
 
- [ ]Instalando o conector do bando de dados MySQL
+ [X]Instalando o conector do bando de dados MySQL
+    - `pip install mysqlclient`
+    
+
  [ ]Criando o modelo da receita
  [ ]Criando a migration (mapeamento)
  [ ]Realizando a migration

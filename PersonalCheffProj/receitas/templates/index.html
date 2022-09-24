@@ -3,31 +3,25 @@
 {% block content%}
 {% include 'partials/header.html' %}
    
-    <table border="1" class="tabela-receitas">
-        <tr>
+    <table border="1" class="table table-hover">
+        <tr class=" table-primary ">
             <th>Receita</th>
             <th>Vídeo</th>
             <th>Ações</th>
         </tr>
+        {% for chave, uma_receita in lista_receitas.items %}
         <tr>
             <td>
                 <img src={% static 'suco.webp' %} class="icone-suco">
-                Suco de laranja
-            </td>
+               
+                <strong>{{uma_receita}}</strong><br>
+                
+                </td>
             <td><a href=https://www.youtube.com/watch?v=Nn9140bDPnc>Veja o Vídeo</a></td>
-            <td><a href="sucodelaranja">Ver receita completa</a></td>
-            <td><img src="C:/Users/valdemir.crodrigues/Documents/GitHub/PersonalCheff1/laranja.webp" alt="Minha Figura"></td>
+            <td><a href="sucodelaranja" class="btn btn-info">Ver receita completa</a></td>
         </tr>
-        <tr>
-            <td>Suco de Lmão</td>
-            <td><a href="https://www.youtube.com/watch?v=9QUhRXEBY8o">Veja o Vídeo</a></a></td>
-            <td><a href="sucodelimao">Ver receita completa</a></td>
-        </tr>
-        <tr>
-            <td>Suco de Morango</td>
-            <td><a href="https://www.youtube.com/watch?v=1rd79vrMZq0">Veja o Vídeo</a></a></td>
-            <td><a href="sucodemorango">Ver receita completa</a></td>
-        </tr>
+        {% endfor %}
+       
     </table>
 {% include 'partials/footer.html' %}
 {% endblock %}

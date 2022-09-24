@@ -145,8 +145,20 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
  -inira em cada um dos arquivos seus codigos correspondentes. Exemplo: noa arquivo `header.html` eu insiro todo o controle quero que  seja apresentado no cabeçalho da minha aplicação. não se esqueça do comando `{% load static} 
  - para incluir as partials no arquivos de destinos utilize o comando `include`da seguite maneira:
  {% include 'partials/header.html'%} 
- [ ]Renderizando dados dinamicamente
- [ ]Criando um dicionario com as receitas
+ [X]Renderizando dados dinamicamente
+    - Trocar informações fixas no arquivo html por informações dinâmicas vindas do arquivo python.
+    -Quero gerar a lista de receita de forma dinamica, vamos fazer isso utilizando o recursos o Django que passa uma informação para minhas templates(.html) através da passagem de um parametro no comando `rende`que esta em minha view (.py): 
+    ```python 
+    return rende(request, 'index.html, {'nome_da_receita':'index.html'}) 
+    ```
+    -Observe que passei atraves do comando 'render' um `dicionario`para a template. na minha templete (`index.html`) eu posso exibir o conteúdo desse dicionário da seguinte forma:
+    
+    eu posso exib .....
+
+    COPIAR DO GUTO
+
+ [X]Criando um dicionario com as receitas
+    - No arquivo views.py 
  [ ]Criando o banco de dados(MySQL/MariaDB)
  [ ]Instalando o conector do bando de dados MySQL
  [ ]Criando o modelo da receita

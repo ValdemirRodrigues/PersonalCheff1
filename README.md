@@ -57,6 +57,8 @@ python manage.py startapp receitas
 INSTALLED_APPS[
     ...
     'receitas',
+```
+
 ]
 - [X] Configurar a rota inicial (index)
 ```
@@ -159,7 +161,12 @@ Dentro da pasta receitas(app) abrir o arquivo views.py
 
  [X]Criando um dicionario com as receitas
     - No arquivo views.py 
- [ ]Criando o banco de dados(MySQL/MariaDB)
+ [X]Criando o banco de dados(MySQL/MariaDB)
+    - Abra o XAMPP e start os serviçoss do Apache e MySQL 
+    - Click no botão admin do Apache 
+    - Acesse o link PHPMyAdmin
+    - Dentro PHPMyAdmin, click no botão `novo` para criar um banco de dados, insira o nome `personacheff_br`
+
  [ ]Instalando o conector do bando de dados MySQL
  [ ]Criando o modelo da receita
  [ ]Criando a migration (mapeamento)
@@ -181,6 +188,12 @@ templetes/
         menu.html
         footer.html
 ´´´        
+
+
+Site importantes 
+https://getbootstrap.com/
+css padrão
+
 ## 📝 Licença
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
 [⬆ Voltar ao topo](#nome-do-projeto)<br>

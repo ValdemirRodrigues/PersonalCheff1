@@ -210,7 +210,16 @@ pip install mysqlclient
     `python manage.py createsuperuser`
     *** Obs: Quando digitar a senha, ele vai ficar em branco 
 
- []Registrando um modelo no admin
+ [X] Registrando um modelo no admin
+    -Para criar o módulo referente ao app no ambiente administrativo, precisamos registrar nosso modelos no admin
+    - Abra o arquivo `receitas\admin.py`e registre seu modelo:
+        ```python
+        from django.contrib import admin
+        from .models import Receitas
+        
+        admin.site.register(Receitas) 
+[] Trazendo os dados do banco de dados
+[] Exibição das paginas das receitas
     
 
 

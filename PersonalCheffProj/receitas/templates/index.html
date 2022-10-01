@@ -6,18 +6,24 @@
     <table border="1" class="table table-hover">
         <tr class=" table-primary ">
             <th>Receita</th>
+            <th>Nota</th>
             <th>Vídeo</th>
             <th>Ações</th>
         </tr>
-        {% for chave, uma_receita in lista_receitas.items %}
+        {% for receita in lista_receitas %}
         <tr>
             <td>
-                <img src={% static 'suco.webp' %} class="icone-suco">
+                {{receita.nome_receita}}
                
                 <strong>{{uma_receita}}</strong><br>
                 
-                </td>
-            <td><a href=https://www.youtube.com/watch?v=Nn9140bDPnc>Veja o Vídeo</a></td>
+            </td>
+            <td>
+                {% for receita.nota in receita.nota - %}
+                    *
+                {% endfor %}
+            </td>
+            <td><a href="{{receita.video}}">Veja o Vídeo</a></td>
             <td><a href="sucodelaranja" class="btn btn-info">Ver receita completa</a></td>
         </tr>
         {% endfor %}

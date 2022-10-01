@@ -9,59 +9,40 @@
 Uma aplicação web de receitas chamada PersonalCheff1 desenvolvida durante o curso de Python no Senac Americana. A aplicação listará receitas e clicando em cada nome de receita você pode ver a receita completa.
 
 ### Lista de tarefas
+Lista de tarefas
 Segue a lista de tarefas a serem desenvolvidas no projeto:
-- [X] Pré-requisitos
-    - [X] Instalar o Python
-    - [X] Instalar Visual Studio Code
-- [X] Criar e ativar o ambiente virtual
-```
-criação e ativação
-python -m venv .\venv\
-Scripts\activate
-```
 
-- [X] Instalar de Django
-```
+ Pré-requisitos
+ Instalar o Python
+ Instalar Visual Studio Code
+ Criar e ativar o ambiente virtual
+python -m venv .\venv\
+venv\Scripts\activate
+# se der erro no powershell utilize o comando abaixo para resolver a permissão
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+ Instalar o Django
 python -m pip install django==3.2
-```
-- [X] Criar o projeto PersonalCheff1
-```
-Busca por comandos
-django-admin help
-django-admin.py help
-django-admin.py startproject PersonalCheffProj
-```
-- [X] Subir o servidor e testar o projeto
-```
+ Criar o projeto PersonalCheff
+django-admin.py startproject PersonalCheffProject PersonalCheffProj
+ Subir o servidor e testar o projeto
 entrar na pasta do projeto
 cd PersonalCheffProj
 
-executar o projeto no servidor 
+executar o projeto no servidor
 python manage.py runserver
-```
-- [X] Criar e ativar o ambiente virtual 
-- [X] Subir o servidor e testa o projeto 
-- [X] Alterar o idioma do projeto para `pt-br` 
-
-Abrir o arquivo `settings.py` e na linha 106 trocar `en-us` para `pt-br` 
-
-- [X] Alterar o timezone do prpjeto para `America/Sao_Paulo`
-Abrir o arquivo `settings.py` e na linha 108 trocar `UTC` para `America/Sao_Paulo`
-- [X] Criar o app receitas
-```
-python manage.py startapp receitas  
-```
-- [X] Registrar  o app receitas
-```
-    no arquivo settings.py adicionar o app receitas na lista de apps 
+ Alterar o idioma do projeto para pt-br
+Abrir o arquivo settings.py e na linha 106 trocar en-us para pt-br
+ Alterar o timezone do projeto para America/Sao_Paulo
+ Criar o app receitas
+* preciso estar dentro da pasta do projeto (PersonalcheffProj)
+python manage.py startapp receitas
+ Registrar o app receitas
+no arquivo settings.py adicionar o app receitas na lista de apps 
 INSTALLED_APPS[
     ...
     'receitas',
-```
-
 ]
-- [X] Configurar a rota inicial (index)
-```
+ Configurar a rota inicial(index)
 Dentro da pasta receita(app) criar o arquivo urls.py
 no arquivo urls.py
     from django.urls import path
@@ -70,127 +51,167 @@ no arquivo urls.py
     urlpatterns = [
         path('', views.index, name='index')
     ]
-```
-- [X] Criar a view  para a rota inicial
-```
+ Criar a view para a rota inicial
 Dentro da pasta receitas(app) abrir o arquivo views.py
     from django.shortcuts import render
     from django.http import HttpResponse
 
     def index(request):
         return HttpResponse("<h1>Seja bem vindo</h1>")
-```
-- [] Registrar a rota inicial
-- [] Criar arquivo index
--Dentro da pasta receitas(app), criar a pasta 'templetes'
-- Dentro da pasta Templetes criar index.html
-- No arquivo viwes.py que esta dentro da pasta do app faça a seguinte alteração de codigo:
-```
-    python
-    
+ Registrar a rota inicial
+Dentro da pasta PersonalCheffProj(app) abrir o arquivo urls.py
+from django.contrib import admin
+from django.urls import path, include
 
-```
-- []Integrar arquivos estáticos (CSS, JS, IMG)
-    - Dentro da Pasta do Projeto (PersonalCheffProj), criar a pasta 'static'
-    - Dentro da Pasta Static, colocar as Imagens, os arquivos css e os arquivos js que for utilizar
-    - No arquivo  ´settings.py´:
-        -realize a importação da biblioteca 'os' atravez do comodo `import os`
-        - na linha  ~58 adicione o caminho dos templetes da seguinte forma:
-        ```python
-          'DIRS': [os.path.join(BASE_DIR, 'receitas/tamplates')],
-        ``` 
-        - no final do arquivo, após a linha 'STATIC_URL' insira o seguinte código:
-        STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-        STATICFILES_DIRS =[
-            os.path.join(BASE_DIR, 'PersonalCheffProj/static')
-        ]
-        ```
-        - `STATIC_URL`: é a confirmação da rota através do qual os arquivos estaticos seram servidos
-        - `STATIC_ROOT`: configuração da pasta de saída (destino) dos arquivos estaticos
-        _`STATIC....DIR`
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('receitas.urls')),
+]
+ Criar o arquivo index.html
+Dentro da pasta receitas(app), crie a pasta templates
+Dentro da pasta templatescrie seus arquivos HTML começando pelo index.html
+No arquivo views.py que está dentro da pasta do app faça a seguinte alteração de código:
+from django.shortcuts import render
 
-        - na primeira linha do arquivo `index.html` insira `{% load static %}`. Esse comando deve ser usado em todos os qarquivos em que você for utilizar arquivos estaticos.
-        - Insira uma img utilizando o comando <img src="{% static 'logo.php' %}>. Sempre que for utilizar um arquivo estatico voce deve utilizar {% static 'nome-do-arquivo'} 
-
-- [X] Utilizando links
-    -Para criar um link na pagina html utilize url 
-    <a hraf= "{% url 'index' %}">Pagina inicial</a>
- [X]Criando o base.html
-    - na pasta `templetes` crie o arquivo base.html , Esse arquivocontem todo o codigo de estrutura comum à todos as paginas. nesse arquivo deve ficar tudo que tiver do `body` e tudo que tiver depois do `/body`.
-    - nesse arquivo de conter o `{% load static %}`
-    - nesse arquivo , no local aonde será  carregado o conteudo das outras paginas, deve existir os delimitadores `{ block contente%}` e `{% endblock%}
-    - o codigo da `base.html` sera algo parecido com:
-    ```python
-    {% load static %}
+def index(request):
+    return render(request,'index.html')
+ Integrar arquivos estáticos (CSS, JS, IMG)
+Dentro da pasta do projeto (PersonalCheffProj), criar a pasta static
+Dentro da pasta static, colocar as imagens, os arquivos css e os arquivos js que for utilizar
+No arquivo settings.py:
+realize a importação da biblioteca os através do comando import os
+na linha ~58 adicione o caminho dos templates da seguinte forma:
+'DIRS': [os.path.join(BASE_DIR, 'receitas/templates')],
+no final do arquivo, após a linha STATIC_URL insira o seguinte código:
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'PersonalCheffProj/static')
+]
+STATIC_URL: é a configuração da rota através do qual os arquivos estáticos seram servidos
+STATIC_ROOT: configuração da pasta de saída(destino) dos arquivos estáticos
+STATICFILES_DIRS: cofiguração da(s) pasta de origem dos arquivos estáticos.
+após realizar essas configurações execute, no terminal, o comando python manage.py collectstatic
+na primeira linha do arquivo index.html insira {% load static %}. Esse comando deve ser usado em todos os arquivos em que você for utilizar arquivos estáticos.
+insira uma imagem utilizando o comando <img src="{% static 'logo.png' %}">. Sempre que for utilizar um arquivo estático você deve utilizar {% static 'nome-do-arquivo' %}
+ Utilizando links
+para criar um link para a página index, independente de onde você esteja utilize o comando url:
+<a href="{% url 'index' %}">Página inicial</a>
+ Criando o base.html
+na pasta templatescrie o arquivo base.html. Esse arquivo contém todo o código de estrutura comum à todas as páginas. Nesse arquivo deve ficar tudo que tiver antes do body e tudo que tiver depois do /body.
+nesse arquivo deve conter o {% load static %}
+nesse arquivo, no local aonde será carregado o conteúdo das outras páginas, deve existir os delimitadores {% block content %} e {% endblock %}
+o código do base.html será algo parecido com:
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PersonalCheff</title>
-    <link rel="stylesheet" href="{% static 'estilo.css' %}">
-    <link rel="shortcut icon" href="{% static 'logo.webp' %}"  >
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+    <link rel="shortcut icon" href="{% static 'logo.png' %}" type="image/x-icon">
 </head>
 <body>
-    {% block content %}
+{% block content %}
 
-    {% endblock %}
-
-</body>  
+{% endblock %}
+</body>
 </html>
- [X]Separando em partials
- - criar uma pasta chamada `partials` dentro da parta `templetes`
- - dentro da pasta `partials` crie os arquivos que serão as ** partes glogais** utilizadas no seu projeto como `header.html`, footer.html `, etc. No nosso exemplo criamos as partials `header.html `e `fooder.html`
- -inira em cada um dos arquivos seus codigos correspondentes. Exemplo: noa arquivo `header.html` eu insiro todo o controle quero que  seja apresentado no cabeçalho da minha aplicação. não se esqueça do comando `{% load static} 
- - para incluir as partials no arquivos de destinos utilize o comando `include`da seguite maneira:
- {% include 'partials/header.html'%} 
- [X]Renderizando dados dinamicamente
-    - Trocar informações fixas no arquivo html por informações dinâmicas vindas do arquivo python.
-    -Quero gerar a lista de receita de forma dinamica, vamos fazer isso utilizando o recursos o Django que passa uma informação para minhas templates(.html) através da passagem de um parametro no comando `rende`que esta em minha view (.py): 
-    ```python 
-    return rende(request, 'index.html, {'nome_da_receita':'index.html'}) 
-    ```
-    -Observe que passei atraves do comando 'render' um `dicionario`para a template. na minha templete (`index.html`) eu posso exibir o conteúdo desse dicionário da seguinte forma:
+ Separando em partials
+criar uma pasta chamada partials dentro da pasta templates
+dentro da pasta partialscrie os arquivos que serão as partes globais utilizadas no seu projeto como header.html, footer.html, menu.html, side-bar.html, banner.html, etc. No nosso exemplo criamos as partials header.html e footer.html
+insira em cada um dos arquivos partials seus códigos correspondentes. Exemplo: no arquivo header.html eu insiro todo o conteúdo que eu quero que seja apresentado no cabeçalho da minha aplicação. Não se esqueça do comando {% load static %}.
+para incluir as partials nos arquivos de destino utilize o comando include da seguinte maneira: {% include 'partials/header.html' %}
+ Renderizando dados dinamicamente
+Trocar as informações fixas no arquivo html por informações dinâmicas vindas do arquivo python.
+Quero gerar a lista de receitas de foram dinâmica, vamos fazer isso utilizando o recurso do Django que passa uma informação para minhas templates(.html) através da passagem de uma parâmetro no comando render que está em minha view(.py):
+return render(request,'index.html', {'nome_da_receita':'suco de laranja'})
+Observer que passei através do comando render um dicionário para a template. Na minha template(index.html) eu posso exibir o conteúdo desse dicionário da seguinte forma:
+<td><img src="{% static 'suco.png' %}" class="icone-suco">
+    {{nome_da_receita}}</td>
+Vale a pena diferenciar o uso de {{ }} e {% %}:
+{{ }} é utilizado normalmente para exibir o valor de variáveis, para mostrar informação em tela
+{% %} é utilizado para o processamento de informações, usamos esses delimitadores quando precisamos de if ou forpor exemplo.
+ Criando um dicionario com as receitas
+No arquivo views.py vamos criar um dicionário com as receitas, modifique a função index da seguinte forma:
+def index(request):
+    receitas = {
+        1:'Suco de Melão',
+        2:'Pizza',
+        3:'Suco de Limão',
+    }
     
-    eu posso exib .....
-
-    COPIAR DO GUTO
-
- [X]Criando um dicionario com as receitas
-    - No arquivo views.py 
- [X]Criando o banco de dados(MySQL/MariaDB)
-    - Abra o XAMPP e start os serviçoss do Apache e MySQL 
-    - Click no botão admin do Apache 
-    - Acesse o link PHPMyAdmin
-    - Dentro PHPMyAdmin, click no botão `novo` para criar um banco de dados, insira o nome `personacheff_br`
-
- [X]Instalando o conector do bando de dados MySQL
-    - `pip install mysqlclient`
+    dados = {
+        'lista_receitas' : receitas
+    }
     
+    return render(request,'index.html', dados)
+na template index.html, eu faço um laço de repetição que verifique cada item da lista de receitas à cada passagem do laço:
+{% for chave, uma_receita in lista_receitas.items %}
+    <tr>
+        <td>
+            <img src="{% static 'suco.png' %}" class="icone-suco">
+            {{uma_receita}}
+        </td>
+        <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
+        <td><a href="{% url 'sucodelaranja' %}" class="btn btn-info">Ver receita completa</a></td>
+    </tr>
+{% endfor %}
+ Criando o banco de dados(MySQL/MariaDB)
+Abra o XAMPP e start os serviços do Apache e MySQL
+Click no botão admin do Apache
+Acesse o link PHPMyAdmin
+Dentro do PHPMyAdmin, click no botão novo para criar um banco de dados, insira o nome personalcheff_bd
+ Instalando o conector do bando de dados MySQL
+pip install mysqlclient
+ Configurar a conexão com mysql
+    - No arquivo `settings.py` , na linha ~78 configurar a conexão para o seu banco de dados como no exemplo
+    ```python
+    `default`:
+        'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'personalcheff_db',
+        'USER': 'root',
+        'PASSWORD':'',
+        'HOST':'localhost',
+        'PORT': '3306',
 
- [ ]Criando o modelo da receita
- [ ]Criando a migration (mapeamento)
- [ ]Realizando a migration
- [ ]Registrando um modelo no admin
- [ ]Criando um usuário para o ambiente administrativo
+    }
+    
+[X]Criando o modelo da receita
+    - Modelo é a representação das tabelas no banco de dados . Cada classe em um modelo equivale a uma tabela.
+    - No arquivo `receitas.\models.py` crie a classe para a representaão da tabela de receitas:
+    ```pythos
+        from datetime import datetime
+        from tkinter.tix import Tree
+        from django.db import models
 
-´´´
-    Projeto padrão do GUTO
-static/
-    style.css
-    app.js
-    img/
+        class Receitas(models.Model):
+            nome_receita= models.CharField(max_length=100)
+            video=models.CharField(max_length=80)
+            modo_preparo= models.TextField()
+            ingredientes = models.TextField()
+            nota= models.IntegerField()
+            data_receita= models.DateTimeField(default=datetime.now,blank=True)
 
-templetes/
-    index.html
-    partials/
-        heaader.html
-        menu.html
-        footer.html
-´´´        
+ [X]Criando a migration (mapeamento)
+    - preparar todas as models criadas para serem migradas para o banco de dados
+    - no terminal digite `python manage.py makemigrations`
+ 
+ [X]Realizando a migration
+    realizar a migração é criar fisicamente as tabelas preparadas anteriormente, e no nosso caso , as tabelas preparadas pelo django para o seu ambiente adinistrativos
+
+    `python manage.py migrate`
+
+[X] Criando um usuário para o ambiente administrativo 
+    - o Django já cria um ambiente administrativo para nossa aplicação ficando esse ambiente em: `https://127.0.0.1:8000/admin/`
+    - Para utilizar o ambiente administrativo precisamos criar um usuário de acesso. Not terminal didite 
+    `python manage.py createsuperuser`
+    *** Obs: Quando digitar a senha, ele vai ficar em branco 
+
+ []Registrando um modelo no admin
+    
 
 
 Site importantes 

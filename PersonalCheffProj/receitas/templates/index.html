@@ -14,17 +14,17 @@
         <tr>
             <td>
                 {{receita.nome_receita}}
-               
-                <strong>{{uma_receita}}</strong><br>
-                
             </td>
             <td>
-                {% for receita.nota in receita.nota - %}
-                    *
+                {% with ''|center:receita.nota as range%}
+                {% for i in range %}
+                <img src="https://img.freepik.com/vetores-premium/icone-de-estrela-3d-ouro_1102-2203.jpg" width="18">
                 {% endfor %}
+                {% endwith %}
             </td>
+        
             <td><a href="{{receita.video}}">Veja o Vídeo</a></td>
-            <td><a href="sucodelaranja" class="btn btn-info">Ver receita completa</a></td>
+            <td><a href="{% url 'receita' receita.id %}" class="btn btn-info">Ver receita completa</a></td>
         </tr>
         {% endfor %}
        
